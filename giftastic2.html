@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>let's Gif physical</title>
+    <!--reset-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--Style sheet  -->
+    <link rel="stylesheet" type="text/css" href="giftastic.css">
+    <!-- jQuery -->
+    <link rel="function" type="JS" href="giftastic.js">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="header">
+            <div class="col-xs-12 col-md-4"></div>
+            <div class="col-xs-12 col-md-4">
+                <h1>Add An Animal</h1>
+            </div>
+            <div class="col-xs-12 col-md-4"></div>
+        </div>
+        <br>
+        <div class="row">
+            <!-- Rendered buttons Get dumped Here -->
+            <div class="jumbotron col-xs-12 col-md-12" id="buttons-view"></div>
+        </div>
+        <div class="jumbotron row">
+            <form id="character-form">
+                <label for="character-input">Enter your favorite animal!</label>
+                <input type="text" id="animals-input">
+                <!-- Button triggers new character to be added -->
+                <input id="add-animal" type="submit" value="Submit">
+            </form>
+        </div>
+        <!-- Gifs Appear Here. -->
+        <div class="row" id="pics">
+            
+        </div>
+        <br>
+        <!-- Footer for Giphy -->
+        <div class="jumbotron footer row">
+            <footer>
+                
+            </footer>
+        </div>
+    </div>
+    <!-- JavaScript link -->
+    <script type="text/javascript" src="giftastic.js"></script>
+</body>
+
+</html>

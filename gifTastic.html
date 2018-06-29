@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>giftastic</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<body>
+  <div class="container">
+      <div class="row">
+          
+    <div class="col-8">id="
+            <div class="container">
+                   
+    </div>
+    <div class="col-4">
+            <div class="container">
+            
+                    <form>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Add a animal</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                               
+                            </div>
+                
+                
+                    
+                      
+                      <!-- Button triggers new movie to be added -->
+                      <input <button type="submit" class="btn btn-primary">Submit</button>>
+                    </form>
+    </div>
+            
+                                                
+
+          </div>
+      </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  
+  
+  <script>
+  
+  var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=SKGatHHLMNKlm4Bk96zP41fUy6hndhlL";
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+        console.log("response", response);
+        console.log("queryURL");
+
+<!-- creat the button -->
+
+var animals = ["cats", "dogs",];
+
+      // Function for displaying movie data
+      function renderButtons() {
+
+        // Deleting the movie buttons prior to adding new movie buttons
+        // (this is necessary otherwise we will have repeat buttons)
+        $("#animals-view").empty();
+
+        // Looping through the array of movies
+        for (var i = 0; i < animals.length; i++) {
+
+          // Then dynamicaly generating buttons for each movie in the array.
+          // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
+          var a = $("<button>");
+          // Adding a class
+          a.addClass("animals");
+          // Adding a data-attribute with a value of the movie at index i
+          a.attr("data-name", animals[i]);
+          // Providing the button's text with a value of the movie at index i
+          a.text(animals[i]);
+          // Adding the button to the HTML
+          $("#animals-view").append(a);
+        }
+      }
+
+      // This function handles events where one button is clicked
+      $("#add-animals").on("click", function(event) {
+        // event.preventDefault() prevents the form from trying to submit itself.
+        // We're using a form so that the user can hit enter instead of clicking the button if they want
+        event.preventDefault();
+
+        // This line will grab the text from the input box
+        var animals = $("#animals-input").val().trim();
+        // The movie from the textbox is then added to our array
+        animals.push(animals);
+
+        // calling renderButtons which handles the processing of our movie array
+        renderButtons();
+      });
+
+      // Calling the renderButtons function at least once to display the initial list of movies
+      renderButtons();
+    </script>
+  </div>
+</body>
+
+
+  
+  
+
+
+
+
+
+
+
